@@ -1,7 +1,0 @@
-# Demo video has not been recorded yet.
-# This file will be updated with the video URL before final submission.
-#
-# TODO: Record the demo walkthrough and add the URL here. Examples:
-#   https://www.youtube.com/watch?v=XXXXXXXXXXXX
-#   https://vimeo.com/XXXXXXXXX
-#   https://drive.google.com/file/d/XXXXXXXXXXXX/view

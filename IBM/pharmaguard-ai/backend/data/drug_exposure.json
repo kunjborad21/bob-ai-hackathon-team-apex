@@ -1,8 +1,0 @@
-[
-  { "drug_name": "DrugAlpha",   "total_patients_exposed": 15000, "reporting_period": "2020-2023" },
-  { "drug_name": "DrugBeta",    "total_patients_exposed": 12000, "reporting_period": "2020-2023" },
-  { "drug_name": "DrugGamma",   "total_patients_exposed": 18000, "reporting_period": "2020-2023" },
-  { "drug_name": "DrugDelta",   "total_patients_exposed": 10000, "reporting_period": "2020-2023" },
-  { "drug_name": "DrugEpsilon", "total_patients_exposed": 9000,  "reporting_period": "2020-2023" },
-  { "drug_name": "DrugZeta",    "total_patients_exposed": 11000, "reporting_period": "2020-2023" }
-]

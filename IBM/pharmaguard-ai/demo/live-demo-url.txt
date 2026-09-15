@@ -1,8 +1,0 @@
-# No live deployment is available yet.
-# This file will be updated if the project is deployed before final submission.
-#
-# TODO: If the app is deployed, add the URL here. Examples:
-#   https://pharmaguard-ai.vercel.app
-#   https://pharmaguard-ai.railway.app
-#   http://YOUR_SERVER_IP:8000  (for a cloud VM)
-# If the app remains local-only, write: Local only — see docs/setup-guide.md

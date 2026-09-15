@@ -1,1 +1,0 @@
-# bob-ai-hackathon-pharmaguard-ai
