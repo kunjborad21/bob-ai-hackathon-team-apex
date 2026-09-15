@@ -6,74 +6,135 @@
 
 Before you begin, ensure you have the following installed:
 
-- [ ] [e.g., Python 3.11+]
-- [ ] [e.g., Node.js 18+]
-- [ ] [e.g., Docker Desktop]
-- [ ] [e.g., An IBM Cloud account with watsonx.ai access]
+* [ ] Python 3.11+
+* [ ] Node.js 18+
+* [ ] npm
+* [ ] Git
+
+The project has two parts:
+
+* `src/backend` — FastAPI/Python backend
+* `src/frontend` — React/Vite frontend
 
 ## Environment Variables
 
-Copy `.env.example` to `.env` and fill in the values:
+PharmaGuard AI does not require external API keys, database credentials, or other secrets for the current hackathon prototype.
 
-```bash
-cp .env.example .env
-```
+The project uses synthetic data stored inside the repository.
 
-| Variable | Description | Required |
-|---|---|---|
-| `WATSONX_API_KEY` | Your IBM watsonx.ai API key | Yes |
-| `WATSONX_PROJECT_ID` | Your watsonx.ai project ID | Yes |
-| `DATABASE_URL` | PostgreSQL connection string | Yes |
-| `SLACK_WEBHOOK_URL` | Slack webhook for alerts | No |
+If environment-specific configuration is added in the future, it should be stored in a `.env` file and documented through `.env.example`.
+
+**Do not commit real secrets or credentials to Git.**
 
 ## Installation
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/[your-org]/[your-repo].git
-cd [your-repo]
+git clone https://github.com/[your-username]/bob-ai-hackathon-pharmaguard-ai.git
+cd bob-ai-hackathon-pharmaguard-ai
 
-# 2. Install backend dependencies
-[your command — e.g.: pip install -r requirements.txt]
+# 2. Open the backend directory
+cd src/backend
 
-# 3. Install frontend dependencies (if applicable)
-[your command — e.g.: cd frontend && npm install]
+# 3. Install backend dependencies
+py -m pip install -r requirements.txt
 
-# 4. Set up the database (if applicable)
-[your command — e.g.: python manage.py migrate]
+# 4. Open a new terminal and go to the frontend directory
+cd ../frontend
+
+# 5. Install frontend dependencies
+npm install
 ```
 
 ## Running the Application
 
-```bash
-# Start the backend
-[your command — e.g.: uvicorn app.main:app --reload]
+The backend and frontend should be run in separate terminals.
 
-# Start the frontend (in a separate terminal, if applicable)
-[your command — e.g.: cd frontend && npm run dev]
+### Terminal 1 — Start the Backend
+
+```bash
+cd src/backend
+py -m uvicorn main:app --reload --port 8000
 ```
 
-The application will be available at: `http://localhost:[PORT]`
+The FastAPI backend will be available at:
+
+```text
+http://localhost:8000
+```
+
+### Terminal 2 — Start the Frontend
+
+```bash
+cd src/frontend
+npm run dev
+```
+
+The React application will be available at:
+
+```text
+http://localhost:3000/
+```
+
+Open the frontend URL in a browser to use PharmaGuard AI.
 
 ## Running Tests
 
-```bash
-[your test command — e.g.: pytest tests/ -v]
-```
-
-## Quick Demo (Optional)
-
-If you have a demo script or sample data to showcase the project quickly:
+From the backend directory:
 
 ```bash
-[e.g.: python demo/seed_demo_data.py]
-[e.g.: open http://localhost:8000/demo]
+cd src/backend
+py -m pytest tests/ -v
 ```
+
+The project has been verified with:
+
+```text
+62 passed
+```
+
+A Starlette deprecation warning may appear during the test run, but it does not cause the tests to fail.
+
+## Frontend Build Verification
+
+To verify that the React frontend can be built successfully:
+
+```bash
+cd src/frontend
+npm run build
+```
+
+The production build should complete successfully.
+
+A Vite warning about a large JavaScript chunk may appear. This is a build warning and does not prevent the build from completing.
+
+## Quick Demo
+
+After starting both the backend and frontend:
+
+1. Open `http://localhost:3000/`.
+2. Open the **Signal Detection** section.
+3. View the drug-event signal results and PRR values.
+4. Explore signal rankings and clusters.
+5. Select a drug-event pair to view its explanation.
+6. Open the **Submission Readiness** section.
+7. View the synthetic CTD dossier completeness results.
+8. Review identified gaps and their severity.
+9. View the recommendations generated for the identified gaps.
+
+The application uses synthetic adverse-event and regulatory dossier data for demonstration.
 
 ## Troubleshooting
 
-| Issue | Solution |
-|---|---|
-| [e.g., `ModuleNotFoundError`] | [e.g., Run `pip install -r requirements.txt` again] |
-| [e.g., Database connection refused] | [e.g., Ensure PostgreSQL is running: `docker compose up db`] |
-| [e.g., watsonx.ai 401 error] | [e.g., Check `WATSONX_API_KEY` in your `.env` file] |
+| Issue                                               | Solution                                                                                                                       |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `ModuleNotFoundError`                               | Run `py -m pip install -r requirements.txt` from `src/backend`.                                                                |
+| `npm` command not found                             | Install Node.js and npm, then reopen the terminal.                                                                             |
+| Frontend cannot connect to backend                  | Make sure the FastAPI backend is running on port `8000`.                                                                       |
+| `ERR_CONNECTION_REFUSED` from frontend API requests | Start the backend using `py -m uvicorn main:app --reload --port 8000`.                                                         |
+| `npm install` fails                                 | Check that Node.js and npm are installed correctly, then run `npm install` again.                                              |
+| Backend starts but API results are unavailable      | Confirm that you started the backend from `src/backend` so that the project data and modules are available.                    |
+| Port `8000` is already in use                       | Stop the process using port `8000` or start the backend on another port and update the frontend API configuration accordingly. |
+| Port `3000` is already in use                       | Stop the process using port `3000` or use the Vite option to start the frontend on another available port.                     |
+| Tests fail because dependencies are missing         | Run `py -m pip install -r requirements.txt` again.                                                                             |
+| Frontend build shows a chunk-size warning           | This is a Vite build warning. The build can still complete successfully.                                                       |
