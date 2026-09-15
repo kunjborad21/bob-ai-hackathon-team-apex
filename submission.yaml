@@ -1,69 +1,38 @@
-# =============================================================================
-# HACKATHON SUBMISSION METADATA
-# =============================================================================
-# Instructions:
-#   - Fill in ALL required fields (marked with # REQUIRED)
-#   - Optional fields can be left as empty strings ""
-#   - Do NOT rename this file — the evaluation pipeline reads it by name
-#   - Use double quotes around all string values
-# =============================================================================
-
+```yaml
 team:
-  name: ""                             # REQUIRED — e.g., "Orion Squad"
-  track: ""                            # REQUIRED — one of: AI | DevOps | Sustainability | Open
-  lead:
-    name: ""                           # REQUIRED — e.g., "Alice Chen"
-    email: ""                          # REQUIRED — e.g., "alice.chen@ibm.com"
-  members:
-    - name: ""                         # REQUIRED — Team member 1
-      email: ""
-    - name: ""                         # Add more members by copying the two lines above
-      email: ""
-    - name: ""
-      email: ""
+  name: "Team Apex"
+  track: "AI"
+
+lead:
+  name: "Kunj Borad"
+  email: "25dcs013@charusat.edu.in"
+
+members:
+  - name: "Parva Jadav"
+    email: "25dce071@charusat.edu.in"
+  - name: "Shreyansh Kavad"
+    email: "25dce045@charusat.edu.in"
+  - name: "Krish Vaghasiya"
+    email: "25dce0118@charusat.edu.in"
 
 submission:
-  title: ""                            # REQUIRED — Project display name, e.g., "SmartOps Dashboard"
-
-  problem_statement: >                 # REQUIRED — 1-3 sentences. What problem? Who has it?
-    Replace this text with a concise description of the real-world problem
-    your project addresses and who experiences it.
-
-  solution_summary: >                  # REQUIRED — 1-3 sentences. What did you build?
-    Replace this text with a clear description of your solution
-    and how it addresses the problem above.
-
-  key_features:                        # REQUIRED — List 3 to 5 specific features you implemented
-    - ""                               # e.g., "Real-time pipeline anomaly detection using watsonx.ai"
-    - ""
-    - ""
-    - ""                               # optional 4th
-    - ""                               # optional 5th
-
-  tech_stack:
-    languages: []                      # REQUIRED — e.g., ["Python", "TypeScript"]
-    frameworks: []                     # e.g., ["FastAPI", "React"]
-    ibm_technologies: []               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
-    databases: []                      # e.g., ["PostgreSQL", "Redis"]
-    other: []                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
-
-  what_we_are_most_proud_of: >         # Optional but recommended — guides judges to your best work
-    Replace with what aspect of the submission you consider strongest
-    and want judges to pay special attention to.
-
-  known_limitations: >                 # Optional but recommended — be honest about gaps
-    Replace with any known limitations, incomplete features,
-    or shortcuts taken due to time constraints.
-
-# =============================================================================
-# ARTIFACT LOCATIONS
-# These paths are relative to the repo root. Only change if you moved files.
-# =============================================================================
-artifacts:
-  source_code: "src/"
-  setup_guide: "docs/setup-guide.md"
-  architecture_doc: "docs/architecture.md"
-  demo_video: "demo/demo-video-link.txt"   # URL to hosted video (YouTube, Loom, Box)
-  live_demo: "demo/live-demo-url.txt"      # URL to deployed demo (optional)
-  screenshots: "demo/screenshots/"
-  presentation: "presentation/"
+  title: "PharmaGuard AI — Drug Safety Signal Detector & Regulatory Submission Readiness Checker"
+  problem_statement: >
+    Pharmacovigilance and regulatory teams need efficient ways to identify
+    potential drug safety signals from adverse-event reports and check the
+    completeness of regulatory submission dossiers. These tasks require
+    analyzing large amounts of information and identifying important gaps
+    efficiently.
+  solution_summary: >
+    PharmaGuard AI is a web-based prototype with two modules: Signal Detection
+    and Submission Readiness. It uses PRR-based signal detection, K-Means
+    clustering, explainability, and an ICH M4-based CTD completeness checker
+    to identify potential safety signals and regulatory submission gaps using
+    synthetic demonstration data.
+  key_features:
+    - "PRR-based drug safety signal detection"
+    - "K-Means clustering of drug-event patterns"
+    - "Signal ranking and explainability"
+    - "ICH M4-based CTD completeness checking"
+    - "Severity-based regulatory gap reporting"
+    - "AI-assisted recommendations for submission gaps"
