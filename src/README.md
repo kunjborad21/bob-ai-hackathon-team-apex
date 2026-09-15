@@ -1,47 +1,71 @@
 # Source Code
 
-Place all your project's source code in this folder.
+All source code for PharmaGuard AI is organized in this folder.
 
-## Structure Guidelines
+## Structure
 
-Organize your code logically. Here are common patterns — use whatever fits
-your project:
-
-### Web Application
-```
+```text
 src/
-  backend/        ← API server code
-  frontend/       ← UI code
-  shared/         ← Shared utilities/types
+  backend/        ← FastAPI backend and analysis engines
+  frontend/       ← React + Vite frontend
+  .env.example    ← Environment variable template
+  README.md       ← This file
 ```
 
-### Data / AI Project
-```
-src/
-  data/           ← Data ingestion / preprocessing
-  models/         ← ML model code
-  api/            ← Serving layer
-  notebooks/      ← Jupyter notebooks (exploration)
-```
+### Backend
 
-### CLI / Script-based Tool
-```
-src/
-  cli/            ← CLI entry points
-  lib/            ← Core logic
-  utils/          ← Helpers
-```
+The `backend/` folder contains:
+
+* FastAPI application and API routes
+* PRR signal detection engine
+* K-Means clustering engine
+* Signal explainability engine
+* CTD completeness checker
+* Recommendation engine
+* Synthetic adverse-event and dossier data
+* ICH M4 schema
+* Backend tests
+
+### Frontend
+
+The `frontend/` folder contains:
+
+* React user interface
+* Signal Detection page
+* Submission Readiness page
+* Signal tables and charts
+* Cluster visualization
+* Explainability panel
+* CTD module tree
+* Gap report
+* Recommendation panel
 
 ## Important Files to Include
 
-- `requirements.txt` or `package.json` — dependency manifest
-- `.env.example` — template for environment variables (NEVER commit `.env`)
-- Any database migration files
-- Configuration files
+* `backend/requirements.txt` — Python dependencies
+* `frontend/package.json` — Frontend dependencies
+* `.env.example` — Environment variable template
 
 ## What NOT to Include in src/
 
-- `.env` files with real secrets
-- Large binary files (use Git LFS or link externally)
-- `node_modules/` or `venv/` (these are in `.gitignore`)
-- Build artifacts (`dist/`, `build/`, `__pycache__/`)
+* `.env` files containing real secrets
+* `node_modules/`
+* `.venv/`
+* `__pycache__/`
+* `dist/` or other build artifacts
+* Other generated files
+
+## Testing
+
+Backend tests can be run with:
+
+```bash
+cd src/backend
+py -m pytest tests/ -v
+```
+
+The current test suite contains 62 passing tests.
+
+## Important Note
+
+PharmaGuard AI uses synthetic data for demonstration and testing. It is a hackathon prototype and is not intended for clinical, diagnostic, pharmacovigilance, or regulatory decision-making without appropriate expert review.
