@@ -1,0 +1,95 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# IBM Bob AI Hackathon — Official Submission Manifest
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Project Identity ──────────────────────────────────────────────────────────
+project_name: "PharmaGuard AI"
+tagline: "Drug Safety Signal Detector & Regulatory Submission Readiness Checker"
+version: "1.0.0"
+submission_date: "2026-07-26"
+
+# ── Team ──────────────────────────────────────────────────────────────────────
+team:
+  name: "Team Apex"
+  members:
+    - name: "Kunj Borad"
+      role: "Developer"
+    - name: "Shreyansh Kavad"
+      role: "Developer"
+    - name: "Krish Vaghasiya"
+      role: "Developer"
+    - name: "Parva Jadhav"
+      role: "Developer"
+  contact_email: "25dcs013@charusat.edu.in"
+
+# ── Problem Statement ─────────────────────────────────────────────────────────
+problem_statement: >
+  Pharmacovigilance teams manually sift through thousands of adverse-event
+  reports to detect drug-safety signals — a process that is slow, error-prone,
+  and hard to explain to regulators. Separately, regulatory-affairs teams spend
+  weeks verifying whether a Common Technical Document (CTD) dossier meets the
+  ICH M4 structure required for market-authorisation submissions. Both tasks
+  demand expert knowledge, are repetitive, and lack real-time feedback.
+
+# ── Solution Summary ──────────────────────────────────────────────────────────
+solution_summary: >
+  PharmaGuard AI is a full-stack pharmacovigilance prototype that automates two
+  high-value tasks. The Signal Detection module applies the Evans 2001 PRR
+  algorithm plus K-Means clustering to 500 synthetic adverse-event reports,
+  surfaces statistically significant drug-event signals ranked by strength, and
+  provides plain-English explainability for each finding. The Submission
+  Readiness module validates a synthetic ICH M4 CTD dossier against all 74
+  required sections across 5 modules, produces a severity-ranked gap list, and
+  generates actionable recommendations — giving teams an instant completeness
+  score before a regulatory filing.
+
+# ── Technology Stack ──────────────────────────────────────────────────────────
+tech_stack:
+  backend:
+    language: Python 3.12
+    framework: FastAPI 0.111+
+    key_libraries:
+      - pandas
+      - numpy
+      - scikit-learn
+      - scipy
+      - pydantic
+      - uvicorn
+  frontend:
+    language: JavaScript (React 18 + JSX)
+    build_tool: Vite 5
+    key_libraries:
+      - react-router-dom
+      - recharts
+      - axios
+      - tailwindcss
+
+# ── IBM Bob Usage ─────────────────────────────────────────────────────────────
+ibm_bob_usage: >
+  IBM Bob acted as the end-to-end development partner for this project — from
+  architecture planning and data generation through engine implementation, test
+  authoring, React component scaffolding, and code review. Every artefact in
+  this repository was produced interactively with Bob. See README.md for a
+  full breakdown of Bob's contribution per task.
+
+# ── Repository ────────────────────────────────────────────────────────────────
+repository_url: "TODO: GitHub repository not yet created — add URL once repo is published"
+
+# ── Demo ──────────────────────────────────────────────────────────────────────
+demo:
+  video_url: "TODO: Demo video not yet recorded — add URL before final submission"
+  live_url:  "TODO: No live deployment yet — add URL if project is deployed before submission"
+  screenshots_dir: "demo/screenshots/"
+
+# ── Docs ──────────────────────────────────────────────────────────────────────
+docs:
+  problem_statement: "docs/problem-statement.md"
+  solution_overview: "docs/solution-overview.md"
+  architecture:      "docs/architecture.md"
+  setup_guide:       "docs/setup-guide.md"
+
+# ── Disclaimer ────────────────────────────────────────────────────────────────
+disclaimer: >
+  All adverse-event data is entirely synthetic and generated for demonstration
+  purposes only. This prototype is not intended for clinical, regulatory, or
+  diagnostic use. All pharmacovigilance findings require expert review.
