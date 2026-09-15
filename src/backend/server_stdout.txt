@@ -1,0 +1,6 @@
+INFO:     127.0.0.1:52704 - "POST /api/signals/prr HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "POST /api/signals/prr HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "POST /api/signals/prr HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "POST /api/signals/cluster HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "GET /api/signals/ranked HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "GET /api/dossier/check/sample HTTP/1.1" 200 OK
