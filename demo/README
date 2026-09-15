@@ -1,0 +1,25 @@
+# Demo
+
+This folder contains the demonstration materials for PharmaGuard AI.
+
+## Demo Video
+
+The demo video demonstrates the main user workflow, including:
+
+1. Opening the PharmaGuard AI application.
+2. Using the Signal Detection module.
+3. Viewing PRR-based safety signals.
+4. Exploring signal ranking, clustering, and explainability.
+5. Using the Submission Readiness module.
+6. Checking the synthetic CTD dossier.
+7. Reviewing identified gaps and recommendations.
+
+The demo video link is available in [`demo-video-link.txt`](demo-video-link.txt).
+
+## Live Demo
+
+The deployed application URL, if available, is provided in [`live-demo-url.txt`](live-demo-url.txt).
+
+## Screenshots
+
+Screenshots of the working application are stored in the [`screenshots/`](screenshots/) folder.
